@@ -1,0 +1,290 @@
+.first-color {
+	background-color: @other;
+}
+.hov-hi:hover {
+	border-color: #322400;
+}
+
+.hov-hi {
+	border-color: darken(#CEC6C0, 10%);//#0088CC;
+}
+
+.other2-color {
+	background-color: @other2;
+}
+
+.fixed-top {
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+  right: 0px;
+  left: 0px;
+}
+
+.bottom-padding{
+	height: 60px;
+	margin-top: -30px;
+	background-color: @bdColor;
+	z-index: 2;
+	position: relative;
+}
+
+.scroll-fix-top{
+  z-index: 100; 
+}
+
+
+.gradientBar(@primaryColor, @secondaryColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+  color: @textColor;
+  text-shadow: @textShadow;
+  #gradient > .vertical(@primaryColor, @secondaryColor);
+  border-color: @secondaryColor @secondaryColor darken(@secondaryColor, 15%);
+  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);
+}
+// Reset filters for IE
+.reset-filter() {
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
+
+.buttonBackground(@startColor, @endColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
+  // gradientBar will set the background to a pleasing blend of these, to support IE<=9
+  .gradientBar(@startColor, @endColor, @textColor, @textShadow);
+  *background-color: @endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  .reset-filter();
+
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
+    color: @textColor;
+    background-color: @endColor;
+    *background-color: darken(@endColor, 5%);
+  }
+
+  // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+  &:active,
+  &.active {
+    background-color: darken(@endColor, 10%) e("\9");
+  }
+}
+
+@btnSuccessBackground:              @third;
+@btnSuccessBackgroundHighlight:     @third2;
+@btnSuccessText: @cartTxtColor;
+
+.btn-success {
+  .buttonBackground(@btnSuccessBackground, @btnSuccessBackgroundHighlight,@btnSuccessText);
+}
+// Info appears as a neutral blue
+
+// @btnModniBackground:              @darkBg;
+// @btnModniBackgroundHighlight:     @darkBg;//darken(@btnModniBackground,10%);
+// @btnModniText:              @other;//@cartTxtColor;
+
+// .btn-modni {
+//   .buttonBackground(@btnModniBackground, @btnModniBackgroundHighlight,@btnModniText);
+// }
+.modal-shown {
+  .modal();
+  display: block;
+}
+
+// Extra small grid
+//
+// Grid classes for extra small devices like smartphones. No offset, push, or
+// pull classes are present here due to the size of the target.
+//
+// Note that `.col-xs-12` doesn't get floated on purpose—there's no need since
+// it's full-width.
+
+.fixed-height{
+  height: 50px;
+}
+
+.max-height{
+  max-height: 90px;
+  overflow: hidden;
+}
+
+.shop-product-image {
+    position: relative; 
+    img {
+      height: 100%;
+      width: 100%;
+    }
+}
+@media (max-width: @screen-xs-max){
+  .shop-product-image {
+    width: 85px;
+    padding-right: 4px;
+    img {
+      height: auto;
+    }
+  }
+  .modal .modal-header .icon-remove {
+    font-size: 200%;
+  }
+}
+
+@media (max-width: @screen-xs-max){
+  .nav-pills {
+    font-size: 90%;
+  }
+  .smallCart {
+    font-size: 90%;
+  }
+  .filterPCl  {
+    display: inline-block;
+  }
+  .nav-pills {
+    li {
+      width: 40%;
+      margin-top: 5px;
+
+    }
+  } 
+}
+
+
+@media (min-width: @screen-sm) {
+.fixed-height{
+  height: 50px;
+}
+.shop-product-image {
+  height: 121px;
+}
+
+.shop-product {
+  .caption {
+    height: 5em;
+  }
+}
+
+}
+
+
+
+@media (min-width: @screen-md) {
+ 
+
+.fixed-height{
+  max-height: 80px;
+}
+.shop-product-image {
+  background: url(images/spinner.gif) no-repeat center center; 
+}
+
+}
+
+
+
+@media (min-width: @screen-lg) {
+
+
+.fixed-height{
+  height: 100px;
+}
+.shop-product-image {
+  height: 200px; 
+}
+
+}
+
+.splash {
+  width: 90%;
+  .first-color();
+  margin-top: -4em;
+  margin-left: -45%;
+  position: fixed;
+  z-index: 3000;
+  top: 50%;
+  left: 50%;
+}
+
+
+@media (min-width: @screen-tablet) {
+.splash {
+  width: 400px;
+  margin-left: -200px;
+}
+}
+
+
+.fixed-height-1 {
+  height: @padding-base-horizontal;
+}
+
+.shop-item {
+  height: 100px;
+  overflow: hidden;
+  .col-sm-3 {
+    img {
+      display: table-cell;
+      vertical-align: middle;
+      height: auto;
+      width: 100%;
+      max-height: 90px;
+    }
+    display: table;
+  }
+}
+
+.home-page {
+  .thumbnail {
+    margin-bottom: 0px;
+  }
+
+}
+
+.navbarWraper {
+  right: 0;
+  left: 0;
+}
+
+.navbarWraper .scroll-fix-top {
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navbarWraper .wrapper {
+  position: relative;
+}
+
+.navbar-stations {
+  margin-top: -20px;
+  background-color: #FAF6EE;
+}
+
+.navbar-stations .text-center {
+  font-size: 50%;
+}
+
+.shop-products {
+
+}
+.separator{
+  height: 3px;
+  background-color: #271C00; 
+}
+
+.navbar-inverse {
+  .dropdown-menu {
+    background-color: @other;
+    color: white;
+    li a {
+      color: @darkBg;
+      &:hover {
+        color: @darkBg;
+        background-color: @other;
+        text-decoration:underline;
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  .mobile-bottom-keyboard-offset{
+    height: 200px;
+  }
+}

@@ -1,0 +1,30 @@
+
+
+
+.banner-paragraph-sizes(@min-width, @font-size, @margin-top) {
+  @media (min-width: @min-width) {
+    .banner-paragraph {
+      font-size: @font-size;
+      margin-top: @margin-top;
+    }
+  }
+  
+}
+
+.ramka-paragraph-sizes(@min-width, @font-size,@margin-bottom) {
+  @media (min-width: @min-width) {
+    .ramka-paragraph {
+      font-size: @font-size !important;
+      margin-bottom: @margin-bottom;
+    }
+  }
+  
+}
+
+.banner-paragraph-sizes(@screen-sm, 14px, 2em);
+.banner-paragraph-sizes(@screen-md, 18px, 3em);
+.banner-paragraph-sizes(@screen-lg, 22px, 5em);
+
+.ramka-paragraph-sizes(@screen-sm, 14px, 0);
+.ramka-paragraph-sizes(@screen-md, 16px, 0.5em);
+.ramka-paragraph-sizes(@screen-lg, 18px, 1em);
