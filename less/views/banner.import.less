@@ -21,6 +21,22 @@
   
 }
 
+.banner-container {
+  height: 130px;
+}
+.banner-sizes(@min-width, @container-width) {
+  @media (min-width: @min-width) {
+    .banner-container {
+      height: @container-width/2.3;
+    }
+  }
+  
+}
+
+.banner-sizes(@screen-sm,@container-sm);
+.banner-sizes(@screen-md,@container-md);
+// .banner-sizes(@screen-lg,@container-md);
+
 .banner-paragraph-sizes(@screen-sm, 14px, 2em);
 .banner-paragraph-sizes(@screen-md, 18px, 3em);
 .banner-paragraph-sizes(@screen-lg, 22px, 5em);
