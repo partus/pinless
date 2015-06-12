@@ -1,0 +1,26 @@
+@media (min-width: @screen-sm) {
+  .item-caption {
+    #gradient > .vertical(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    h2 {
+      font-size: 1.2em;
+    }
+  }
+}  
+.item-caption {
+  .name, .details {
+    white-space: nowrap;
+  }
+  .details {
+    color: @gray-light;
+  }
+  padding: @grid-gutter-width/2 @grid-gutter-width*0.6;
+  * {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: @gray-lighter;
+  }
+  h2 {
+    font-size: 1.4em;
+    margin: 0.3em 0;
+  }
+}

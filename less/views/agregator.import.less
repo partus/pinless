@@ -10,30 +10,60 @@
 }
 
 .rest-logo {
-  position: absolute;
-  
-  top: 0;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  right: 6px;
-  left: 0;
-}
-@media (max-width: @screen-sm-max){
-  .rest-logo{
-    bottom: 0;
-  }
 }
 
+@media (max-width: @screen-xs-max) {
+  .shopsItem {
+    .row {
+      margin: 0;
+      & > div {
+        padding: 0;
+      }
+    }
+    .cover {
+      background-color: rgba(0,0,0,0.5);
+      right: 0;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      position: absolute;
+    }
+    .rest-logo {
+      height: 15em;
+    }
+    .thumbnail {
+      border: 0;
+      border-top: 2px solid @brand-primary;
+      margin: 0;
+    }
+    padding: 0;    
+  }
+}
 .rest-logo-style(@min-width, @image-height) {
   @media (min-width: @min-width) {
-    .rest-logo-fake, .rest-logo {
+    .rest-logo {
+      &:not(:hover){
+        -webkit-filter: grayscale(100%); 
+        filter:  grayscale(100%);
+      }
       height: @image-height;
     }
   }
 }
+.shopsItem {
+  .thumbnail { 
+    position: relative;
+    padding: 0;
+  }
+  .img-wr {
+    position: relative;
+  }
+}
 
-.rest-logo-style(@screen-sm, 74px);
-.rest-logo-style(@screen-md,100px);
-.rest-logo-style(@screen-lg,125px);
+.rest-logo-style(@screen-sm, (@container-sm/2-@grid-gutter-width)*3/4);
+.rest-logo-style(@screen-md,(@container-md/4-@grid-gutter-width)*3/4);
+.rest-logo-style(@screen-lg,(@container-lg/4-@grid-gutter-width)*3/4);
 
