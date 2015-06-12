@@ -454,8 +454,10 @@
     // Caret should match text color on hover
     > .dropdown > a:hover .caret,
     > .dropdown > a:focus .caret {
-      border-top-color: @navbar-default-link-hover-color;
-      border-bottom-color: @navbar-default-link-hover-color;
+      border-top-color: @white;
+      // border-top-color: @navbar-default-link-hover-color;
+      // border-bottom-color: @navbar-default-link-hover-color;
+      border-bottom-color: @white;
     }
 
     // Remove background color from open dropdown
@@ -466,14 +468,18 @@
         background-color: @navbar-default-link-active-bg;
         color: @navbar-default-link-active-color;
         .caret {
-          border-top-color: @navbar-default-link-active-color;
-          border-bottom-color: @navbar-default-link-active-color;
+          // border-top-color: @navbar-default-link-active-color;
+          border-top-color: @white;
+          border-bottom-color: @white;
+          // border-bottom-color: @navbar-default-link-active-color;
         }
       }
     }
     > .dropdown > a .caret {
-      border-top-color: @navbar-default-link-color;
-      border-bottom-color: @navbar-default-link-color;
+      // border-top-color: @navbar-default-link-color;
+      border-top-color: @white;
+      border-bottom-color: @white;
+      // border-bottom-color: @navbar-default-link-color;
     }
 
 
