@@ -24,11 +24,28 @@
 .banner-container {
   height: 130px;
 }
+
 .banner-sizes(@min-width, @container-width) {
   @media (min-width: @min-width) {
     .banner-container {
       height: @container-width/2.3;
     }
+  }
+  @media (min-width: @min-width) {
+    .homePage {
+      .banner-container {
+        height: @container-width*0.74;
+        font-size: @container-width*0.74*30/800;
+        small {
+          font-size: 0.7em;
+        }
+
+        b {
+          font-size: @container-width*0.74*36/800;
+        }
+    }      
+    }
+
   }
   
 }

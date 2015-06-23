@@ -1,18 +1,52 @@
 .home-circle {
   border-radius: 50%;
   -webkit-border-radius: 50%;
-  height: 240px;
-  width: 240px;
-  margin: 2em auto;
   left: 50%;
   padding-top: 20%;
   text-align: center;
   display: inline-block;
+  font-size: 1.7em;
   * {
     text-transform: uppercase;
   }
+  p {
+    margin-top: -12px;
+  }
 }
 
+.home-circle-wr {
+  height: 330px;
+  width: 330px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%; 
+  margin: 5em auto;
+  left: 50%;
+  padding-top: 20%;
+  text-align: center;
+  display: block;
+  position: relative;
+  
+}
+
+
+.homeCircleSizes(@screen, @container) {
+  @media (min-width: @screen) {
+    .home-circle {
+        @param: @container/@container-lg;
+        height: @param*330px;
+        width: @param*330px;
+        margin: @param*120px auto;
+        font-size: @param*24px;
+        p {
+          margin-top: @param*(-12px);
+        }
+    }
+  }
+}
+.homeCircleSizes(@screen-sm, @container-sm);
+.homeCircleSizes(@screen-md, @container-md);
+.homeCircleSizes(@screen-lg, @container-lg);
+// .homeCircleSizes(@screen-xs, @container-sm);
 
 .mHome {
   position: fixed;
@@ -20,14 +54,27 @@
   bottom: 0;
   left: 0;
   right: 0;
+  .item-wr {
+    position: relative;
+    height: 33.3333%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .item {
+      transition: background-color 1s;
+      -webkit-transition: background-color 1s;
+    &:active {
+      transition: background-color 0.1s;
+      -webkit-transition: background-color 0.1s;
+      background-color: @brand-primary;
+    }
     display: block;
     position: relative;
     * {
       text-align: center;
       color: white;
     }
-    height: 33.3333%;
+    height: 100%;
     .content {
       h2 {
         text-transform: uppercase;
@@ -40,4 +87,29 @@
       position: absolute;
     }
   }
+}
+
+
+@media (min-width: @screen-sm) {
+.home-navbar {
+  input {
+    width: 350px !important;
+    color: @gray-dark !important;
+  }
+}
+}
+
+
+
+
+.apps-button {
+  height:50px;
+  margin-top:0.6em; 
+  background: black; 
+  border-radius: 5px;
+  &:hover {
+      transition: background-color 0.4s;
+      -webkit-transition: background-color 0.4s;
+      background-color: @brand-primary;
+    }
 }

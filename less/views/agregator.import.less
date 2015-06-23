@@ -15,6 +15,15 @@
   background-position: center;
 }
 
+@media (min-width: @screen-sm) {
+.places-navbar {
+    input {
+      width: 350px !important;
+      color: @gray-dark !important;
+    }
+  }
+}
+
 @media (max-width: @screen-xs-max) {
   .shopsItem {
     .row {
@@ -24,7 +33,7 @@
       }
     }
     .cover {
-      background-color: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.5);
       right: 0;
       bottom: 0;
       left: 0;
@@ -45,10 +54,10 @@
 .rest-logo-style(@min-width, @image-height) {
   @media (min-width: @min-width) {
     .rest-logo {
-      &:not(:hover){
-        -webkit-filter: grayscale(100%); 
-        filter:  grayscale(100%);
-      }
+      // &:not(:hover){
+      //   -webkit-filter: grayscale(100%); 
+      //   filter:  grayscale(100%);
+      // }
       height: @image-height;
     }
   }
